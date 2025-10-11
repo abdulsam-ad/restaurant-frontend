@@ -38,36 +38,36 @@
     </div>
 
     <!-- Sales Chart -->
-    <div class="section">
-      <h3 class="section-title">📈 Daily Sales</h3>
-      <LineChart :chart-data="chartData" :chart-options="chartOptions" />
-    </div>
+<!--    <div class="section">-->
+<!--      <h3 class="section-title">📈 Daily Sales</h3>-->
+<!--      <LineChart :chart-data="chartData" :chart-options="chartOptions" />-->
+<!--    </div>-->
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from "vue";
-import { Line } from "vue-chartjs";
-import {
-  Chart as ChartJS,
-  Title,
-  Tooltip,
-  Legend,
-  LineElement,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-} from "chart.js";
+// import { Line } from "vue-chartjs";
+// import {
+//   Chart as ChartJS,
+//   Title,
+//   Tooltip,
+//   Legend,
+//   LineElement,
+//   CategoryScale,
+//   LinearScale,
+//   PointElement,
+// } from "chart.js";
 
 // Register Chart.js components
-ChartJS.register(Title, Tooltip, Legend, LineElement, CategoryScale, LinearScale, PointElement);
+// ChartJS.register(Title, Tooltip, Legend, LineElement, CategoryScale, LinearScale, PointElement);
 
 // Local chart component
-const LineChart = {
-  props: ["chartData", "chartOptions"],
-  components: { Line },
-  template: `<Line :data="chartData" :options="chartOptions" />`,
-};
+// const LineChart = {
+//   props: ["chartData", "chartOptions"],
+//   components: { Line },
+//   template: `<Line :data="chartData" :options="chartOptions" />`,
+// };
 
 // Dashboard statistics
 const stats = ref([
@@ -87,34 +87,34 @@ const recentOrders = ref([
 ]);
 
 // Sample chart data
-const chartData = ref({
-  labels: ["Oct 1", "Oct 2", "Oct 3", "Oct 4", "Oct 5", "Oct 6", "Oct 7", "Oct 8"],
-  datasets: [
-    {
-      label: "Revenue ($)",
-      data: [400, 520, 300, 700, 620, 800, 580, 900],
-      borderColor: "#3b82f6",
-      backgroundColor: "rgba(59, 130, 246, 0.2)",
-      tension: 0.3,
-      fill: true,
-    },
-  ],
-});
+// const chartData = ref({
+//   labels: ["Oct 1", "Oct 2", "Oct 3", "Oct 4", "Oct 5", "Oct 6", "Oct 7", "Oct 8"],
+//   datasets: [
+//     {
+//       label: "Revenue ($)",
+//       data: [400, 520, 300, 700, 620, 800, 580, 900],
+//       borderColor: "#3b82f6",
+//       backgroundColor: "rgba(59, 130, 246, 0.2)",
+//       tension: 0.3,
+//       fill: true,
+//     },
+//   ],
+// });
 
 // Chart options
-const chartOptions = ref({
-  responsive: true,
-  maintainAspectRatio: false,
-  plugins: {
-    legend: { display: true, position: "top" },
-  },
-  scales: {
-    y: {
-      beginAtZero: true,
-      ticks: { stepSize: 200 },
-    },
-  },
-});
+// const chartOptions = ref({
+//   responsive: true,
+//   maintainAspectRatio: false,
+//   plugins: {
+//     legend: { display: true, position: "top" },
+//   },
+//   scales: {
+//     y: {
+//       beginAtZero: true,
+//       ticks: { stepSize: 200 },
+//     },
+//   },
+// });
 </script>
 
 <style scoped>

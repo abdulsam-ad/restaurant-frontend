@@ -50,7 +50,6 @@ import { useToast } from "vue-toastification";
 import { fetchMenusById } from "../../../services/owner/menu.ts";
 import { createMenuItem, fetchMenuItems } from "../../../services/owner/menuItem.ts";
 import { selectedRestaurantId } from "../../../stores/restaurantState.ts";
-import {data} from "autoprefixer";
 
 const route = useRoute();
 const toast = useToast();

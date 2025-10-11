@@ -62,7 +62,6 @@
 
 <script setup lang="ts">
 import {ref, onMounted, onBeforeUnmount} from "vue";
-import { useRouter } from "vue-router";
 import { fetchMenus, createMenu } from "../../../services/owner/menu.ts";
 import { selectedRestaurantId } from "../../../stores/restaurantState.ts";
 import {useToast} from "vue-toastification";
@@ -78,7 +77,6 @@ const menus = ref<Menu[]>([]);
 const loading = ref(false);
 const showModal = ref(false);
 const form = ref({ name: "", description: "" });
-const router = useRouter();
 const toast = useToast();
 
 const nextPage = ref<string | null>(null)
@@ -142,10 +140,6 @@ async function createNewMenu() {
     console.error(err);
     toast.error("Failed to create menu.");
   }
-}
-
-function goToMenu(id: number) {
-  router.push({ name: "MenuDetail", params: { id } });
 }
 
 function loadPage(url: string | null, page: number) {

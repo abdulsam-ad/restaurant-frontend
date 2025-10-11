@@ -52,7 +52,6 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { login } from '../services/authentications'
-import { fetchOverviewMetrics } from '../services/overviews'
 
 const email = ref('')
 const password = ref('')
