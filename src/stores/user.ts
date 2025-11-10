@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 import { getMyProfile } from "../services/users.js";
-import {logoutUser} from "../services/authentications.ts";
+import { logoutUser } from "../services/authentications.ts";
 
 
 export const useUserStore = defineStore("user", {

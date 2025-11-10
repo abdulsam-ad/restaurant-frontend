@@ -43,6 +43,7 @@
             <small> Restaurant Owner</small>
           </div>
           <RouterLink to="/owner/profile" class="dropdown-item">⚙️ Settings</RouterLink>
+          <RouterLink to="/owner/notifications" class="dropdown-item">🔔 Notifications</RouterLink>
           <button class="dropdown-item" @click="logout">🚪 Logout</button>
         </div>
       </transition>

@@ -335,6 +335,27 @@ onMounted(() => loadRestaurants())
   cursor: not-allowed;
 }
 
+.details-btn-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-details {
+  background: linear-gradient(135deg, #059669, #10b981);
+  color: white;
+  padding: 7px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.btn-details:hover {
+  background: linear-gradient(135deg, #047857, #059669);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.4);
+}
+
 /* Pagination */
 .pagination {
   margin-top: 28px;
@@ -363,27 +384,6 @@ onMounted(() => loadRestaurants())
   font-size: 1.1rem;
   color: #6b7280;
   margin-top: 30px;
-}
-
-.details-btn-container {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.btn-details {
-  background: linear-gradient(135deg, #059669, #10b981);
-  color: white;
-  padding: 7px 16px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.25s ease;
-}
-
-.btn-details:hover {
-  background: linear-gradient(135deg, #047857, #059669);
-  transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.4);
 }
 
 </style>

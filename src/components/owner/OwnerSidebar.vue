@@ -42,7 +42,7 @@ import { sidebarCollapsed, toggleSidebar } from "../../stores/layoutState.ts";
   left: 0;
   bottom: 0;
   width: 220px;
-  background: #1e293b;
+  background: #293b1e;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -79,7 +79,7 @@ import { sidebarCollapsed, toggleSidebar } from "../../stores/layoutState.ts";
 
 .menu-item:hover,
 .menu-item.active {
-  background: #334155;
+  background: #3a5533;
   color: white;
 }
 
@@ -94,7 +94,7 @@ import { sidebarCollapsed, toggleSidebar } from "../../stores/layoutState.ts";
 }
 
 .collapse-btn {
-  background: #334155;
+  background: #365533;
   color: #fff;
   border: none;
   padding: 0.4rem;
@@ -104,6 +104,6 @@ import { sidebarCollapsed, toggleSidebar } from "../../stores/layoutState.ts";
 }
 
 .collapse-btn:hover {
-  background: #475569;
+  background: #506947;
 }
 </style>

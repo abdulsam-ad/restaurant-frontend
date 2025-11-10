@@ -26,6 +26,7 @@ import Settings from '../views/superadmin/Settings.vue';
 import Notifications from '../views/superadmin/Notifications.vue';
 
 import WaiterDashboard from "../views/waiter/WaiterDashboard.vue";
+import MenuBuilder from "../views/owner/menu/MenuBuilder.vue";
 
 
 const routes: RouteRecordRaw[] = [
@@ -57,9 +58,11 @@ const routes: RouteRecordRaw[] = [
         children: [
             {path: "", name: "OwnerDashboard", component: OwnerDashboard},
             {path: "menu", name: "MenuPage", component: MenuPage},
+            {path: "menu-builder", name: "MenuBuilder", component: MenuBuilder},
             {path: "menu-detail/:id", name: "MenuDetail", component: MenuDetail},
             {path: "orders", name: "OrdersPage", component: OrdersPage},
             {path: "profile", name: "ProfilePage", component: Settings},
+            {path: "notifications", name: "OwnerNotifications", component: Notifications,}
         ],
     },
 
