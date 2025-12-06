@@ -121,7 +121,6 @@ const {
   saveIngredient: saveIngredientComposable,
   editIngredient,
   removeIngredient,
-  clearIngredientForm
 } = useIngredientBuilder()
 
 const { 

@@ -41,7 +41,7 @@ import BaseCard from '../shared/BaseCard.vue'
 import BaseInput from '../shared/BaseInput.vue'
 import BaseTextarea from '../shared/BaseTextarea.vue'
 import BaseButton from '../shared/BaseButton.vue'
-import { MenuForm } from '../../types/menu'
+import type { MenuForm } from '../types/menu'
 
 interface Props {
   menuForm: MenuForm

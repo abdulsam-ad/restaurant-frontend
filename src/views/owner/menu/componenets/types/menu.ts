@@ -6,9 +6,9 @@ export interface MenuForm {
 
 export interface ItemForm {
   name: string;
-  restaurant: number | null;
+  restaurant: string | number;
   description: string;
-  price: number | null;
+  price: string | number;
   category: string | number | null;
   file: File | null;
   preview?: string | null;

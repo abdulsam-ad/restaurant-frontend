@@ -14,7 +14,7 @@
 
 <script setup lang="ts">
 interface Props {
-  modelValue: string | number;
+  modelValue: string | number | null;
   label?: string;
   type?: string;
   placeholder?: string;
@@ -31,7 +31,9 @@ const props = withDefaults(defineProps<Props>(), {
   error: ''
 })
 
-const emit = defineEmits<Emits>()
+const emit = defineEmits<{
+  (e: 'update:modelValue', value: string | number | null): void
+}>()
 </script>
 
 <style scoped>
