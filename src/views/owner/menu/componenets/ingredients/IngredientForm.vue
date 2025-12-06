@@ -12,19 +12,19 @@
 
     <div v-if="addingIngredient" class="form-grid">
       <BaseInput
-        v-model="ingredientForm.name"
+        v-model="localForm.name"
         label="Ingredient Name"
         placeholder="e.g. Tomato"
       />
 
       <BaseInput
-        v-model="ingredientForm.quantity"
+        v-model="localForm.quantity"
         label="Ingredient Quantity"
         placeholder="5"
       />
 
       <BaseTextarea
-        v-model="ingredientForm.description"
+        v-model="localForm.description"
         label="Ingredient Description"
         placeholder="Short description (optional)"
         class="full"
@@ -52,7 +52,7 @@
       <BaseButton variant="secondary" @click="$emit('cancel')">
         ↩ Cancel
       </BaseButton>
-      <BaseButton variant="success" @click="$emit('save-ingredient')">
+      <BaseButton variant="success" @click="onSave()">
         💾 Save Ingredient
       </BaseButton>
     </div>
@@ -60,6 +60,7 @@
 </template>
 
 <script setup lang="ts">
+import { reactive, watch } from 'vue'
 import BaseCard from '../shared/BaseCard.vue'
 import BaseInput from '../shared/BaseInput.vue'
 import BaseTextarea from '../shared/BaseTextarea.vue'
@@ -74,13 +75,29 @@ interface Props {
 
 interface Emits {
   (e: 'toggle-add-ingredient'): void
-  (e: 'save-ingredient'): void
+  (e: 'save-ingredient', payload: IngredientForm): void
   (e: 'image-change', event: Event): void
   (e: 'cancel'): void
 }
 
-defineProps<Props>()
-defineEmits<Emits>()
+const props = defineProps<Props>()
+const emit = defineEmits<Emits>()
+
+// local reactive copy to avoid mutating a prop directly
+const localForm = reactive<Record<string, any>>({ ...props.ingredientForm })
+
+watch(
+  () => props.ingredientForm,
+  (newVal) => {
+    Object.assign(localForm, newVal)
+  },
+  { deep: true }
+)
+
+function onSave() {
+  // cast back to IngredientForm to satisfy the emit signature
+  emit('save-ingredient', { ...(localForm as IngredientForm) })
+}
 </script>
 
 <style scoped>

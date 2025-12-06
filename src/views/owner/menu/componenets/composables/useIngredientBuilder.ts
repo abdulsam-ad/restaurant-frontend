@@ -71,6 +71,9 @@ export function useIngredientBuilder() {
 
   function editIngredient(index: number): string | null {
     const ingredient = currentIngredients.value[index]
+    
+    if (!ingredient) return null
+
     Object.assign(ingredientForm, {
       name: ingredient.name,
       description: ingredient.description,
@@ -78,7 +81,7 @@ export function useIngredientBuilder() {
       file: ingredient.file,
     })
     editingIngredientIndex.value = index
-    return ingredient.preview
+    return ingredient.preview ?? null
   }
 
   function removeIngredient(index: number): void {
